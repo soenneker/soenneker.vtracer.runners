@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net11.0</TargetFramework>
+        <Features>$(Features);runtime-async=on</Features>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Soenneker.Utils.Test" Version="11.0.345" />
+        <PackageReference Include="Soenneker.Tests.HostedUnit" Version="11.0.358" />
+        <PackageReference Include="TUnit" Version="1.81.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Soenneker.Vtracer.Runners\Soenneker.Vtracer.Runners.csproj" />
+    </ItemGroup>
+
+</Project>
